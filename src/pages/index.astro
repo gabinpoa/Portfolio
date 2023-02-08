@@ -1,0 +1,20 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import NewTechs from "../components/NewTechs.astro";
+import Projects from "../components/Projects.astro";
+import Stacks from "../components/Stacks.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Conheça Gabriel Jardim">
+  <main class="xl:px-48 2xl:px-80">
+    <div class="h-screen flex flex-col">
+      <Header />
+      <Hero />
+    </div>
+    <Projects />
+    <Stacks />
+    <NewTechs />
+  </main>
+</Layout>

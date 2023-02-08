@@ -1,0 +1,134 @@
+---
+import { Icon } from "astro-icon";
+import StackCard from "./StackCard.astro";
+---
+
+<section class="flex flex-col gap-4 py-32 items-center">
+  <div class="flex gap-7">
+    <StackCard
+      color="slate-800"
+      icon="simple-icons:react"
+      iconHeight={9}
+      link="https://reactjs.org/"
+      textSize="xl"
+      title="React"
+    />
+    <StackCard
+      color="slate-800"
+      icon="simple-icons:javascript"
+      iconHeight={9}
+      link="https://www.javascript.com/"
+      textSize="xl"
+      title="JavaScript"
+    />
+    <StackCard
+      color="slate-800"
+      icon="simple-icons:typescript"
+      iconHeight={9}
+      link="https://www.typescriptlang.org/"
+      textSize="xl"
+      title="TypeScript"
+    />
+    <StackCard
+      color="violet-800"
+      icon="simple-icons:nodedotjs"
+      iconHeight={9}
+      link="https://expressjs.com/"
+      textSize="xl"
+      title="Node Express"
+    />
+  </div>
+  <div class="flex gap-6">
+    <StackCard
+      color="emerald-700"
+      icon="simple-icons:tailwindcss"
+      iconHeight={8}
+      link="https://tailwindcss.com/"
+      textSize="lg"
+      title="TailwindCSS"
+    />
+    <StackCard
+      color="emerald-700"
+      icon="simple-icons:expo"
+      iconHeight={7}
+      link="https://expo.dev/"
+      textSize="lg"
+      title="Expo"
+    />
+    <StackCard
+      color="slate-800"
+      icon="simple-icons:nextdotjs"
+      iconHeight={8}
+      link="https://nextjs.org/"
+      textSize="lg"
+      title="Next"
+    />
+    <StackCard
+      color="emerald-700"
+      icon="simple-icons:html5"
+      iconHeight={8}
+      link="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+      textSize="lg"
+      title="HTML"
+    />
+    <StackCard
+      color="emerald-700"
+      icon="cib:figma"
+      iconHeight={8}
+      link="https://www.figma.com/"
+      textSize="lg"
+      title="Figma"
+    />
+  </div>
+  <div class="flex gap-5">
+    <StackCard
+      color="emerald-700"
+      icon="simple-icons:astro"
+      iconHeight={7}
+      link="https://astro.build/"
+      textSize="base"
+      title="CSS"
+    />
+    <StackCard
+      color="emerald-700"
+      icon="simple-icons:css3"
+      iconHeight={7}
+      link="https://developer.mozilla.org/pt-BR/docs/Web/CSS"
+      textSize="base"
+      title="CSS"
+    />
+    <StackCard
+      color="violet-800"
+      icon="simple-icons:prisma"
+      iconHeight={7}
+      link="https://www.prisma.io/"
+      textSize="base"
+      title="Prisma"
+    />
+    <StackCard
+      color="violet-800"
+      icon="simple-icons:postgresql"
+      iconHeight={7}
+      link="https://www.postgresql.org/"
+      textSize="base"
+      title="PostgreSQL"
+    />
+    <a
+      class="flex gap-3 px-3 py-2 items-center rounded-md text-base font-medium bg-emerald-700"
+      href="https://qwik.builder.io/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Qwik
+      <img class="h-7" src="/qwik-white.png" alt="Qwik logo" />
+    </a>
+    <StackCard
+      color="violet-800"
+      icon="simple-icons:railway"
+      iconHeight={7}
+      link="https://railway.app/"
+      textSize="base"
+      title="Railway"
+    />
+  </div>
+</section>
