@@ -5,18 +5,17 @@ interface Props {
   link: string;
   textSize: TextSize;
   iconSize: number;
-  color: string;
   title: string;
 }
 import { Icon } from "astro-icon";
-const { icon, link, textSize, iconSize, color, title }: Props = Astro.props;
+const { icon, link, textSize, iconSize, title }: Props = Astro.props;
 ---
 
 <a
   href={link}
   target="_blank"
   rel="noopener noreferrer"
-  class={`flex gap-3 px-3 py-2 items-center rounded-md text-${textSize} font-medium bg-${color}`}
+  class={`flex gap-3 px-3 py-2 items-center rounded-md text-${textSize} font-medium bg-slate-800`}
 >
   {title}
   <Icon size={iconSize} name={icon} />

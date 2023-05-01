@@ -1,27 +1,31 @@
-<section class="flex justify-between items-center flex-1">
-  <div class="flex flex-col gap-12">
+---
+import HeroImage from "./HeroImage.svelte";
+---
+
+<section
+  class="flex items-center md:justify-between flex-col md:flex-row gap-12 mt-5 md:mt-0 md:gap-1 flex-1"
+>
+  <div class="flex flex-col gap-8 md:gap-12">
     <div>
       <p class="text-lg">Bem-vindo, eu sou</p>
       <h1 class="font-semibold text-6xl">Gabriel Nascimento</h1>
     </div>
     <h2 class="text-emerald-600 text-lg uppercase font-semibold">
-      Desenvolvedor web e react native
+      Criação Web e mobile simplificado
     </h2>
-    <h3 class="text-lg">
-      Sou um programador web full stack especializado em React que adora novas
-      tecnologias
+    <h3 class="text-lg max-w-xl">
+      Desenvolvedor Full Stack Web e React Native, especializado em React, Next,
+      Node e outros frameworks. Utilizando tecnologias modernas para desenvolver
+      com mais agilidade.
     </h3>
-    <a
-      href="mailto:gabrielnpoa@gmail.com?subject=Assunto%20do%20email&body=Algum%20conte%C3%BAdo%20personalizado"
-      class="bg-emerald-600 w-fit text-xl px-10 py-2 rounded-full text-slate-900 font-semibold"
-      target="_blank"
-      rel="noopener noreferrer">Me Contrate</a
-    >
+    <div class="flex justify-center md:justify-start">
+      <a
+        href="mailto:gabrielnpoa@gmail.com?subject=Assunto%20do%20email&body=Algum%20conte%C3%BAdo%20personalizado"
+        class="bg-emerald-600 w-fit text-xl px-10 py-2 rounded-full text-slate-900 font-semibold"
+        target="_blank"
+        rel="noopener noreferrer">Me Contrate!</a
+      >
+    </div>
   </div>
-  <img
-    width={384}
-    height={384}
-    src="/avatar-removebg-preview.png"
-    alt="avatar de Gabriel Nascimento"
-  />
+  <HeroImage client:load />
 </section>

@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon";
+interface Props {
+  leftImage: string;
+  leftDescription: string;
+  leftTechs: string[];
+  leftUrl: string;
+  rightImage: string;
+  rightDescription: string;
+  rightTechs: string[];
+  rightUrl: string;
+}
+const {
+  leftImage,
+  leftDescription,
+  leftTechs,
+  rightImage,
+  rightDescription,
+  rightTechs,
+  rightUrl,
+  leftUrl,
+} = Astro.props as Props;
+---
+
+<div class="flex py-40">
+  <img
+    class="xl:w-64 2xl:w-72 rounded-md shadow"
+    src="/spotifan.png"
+    alt="Screenshot de spotifan-theta.vercel.app"
+  />
+  <div class="flex-1 flex flex-col gap-16 justify-center">
+    <div class="bg-slate-800 px-3 py-4 space-y-5 shadow-sm mr-6 rounded-r-md">
+      <a
+        class="flex text-xl hover:text-blue-400 items-center font-medium gap-3"
+        href="http://spotifan-theta.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Spotifan
+        <Icon class="h-6" name="line-md:external-link" /></a
+      >
+      <p class="text-lg">
+        Veja seu artista mais tocado. Integrada com API do Spotify, permite
+        fazer login com sua conta e coletar dados permitidos.
+      </p>
+      <div class="text-emerald-500 flex gap-5 font-light">
+        <p>Spotify API</p>
+        <p>NextJS</p>
+        <p>React</p>
+      </div>
+    </div>
+    <div class="bg-slate-800 px-3 py-4 space-y-5 shadow-sm ml-6 rounded-l-md">
+      <a
+        class="flex text-xl hover:text-blue-400 items-center font-medium gap-3"
+        href="http://pituca.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Pituca
+        <Icon class="h-6" name="line-md:external-link" /></a
+      >
+      <p class="text-lg">
+        Fornece diversas imagens de uma cachorrinha muito querida e engraçada.
+      </p>
+      <div class="text-emerald-500 flex gap-5 font-light">
+        <p>Vite</p>
+        <p>TailwindCSS</p>
+        <p>React</p>
+      </div>
+    </div>
+  </div>
+  <img
+    class="xl:w-64 2xl:w-72 h-auto rounded-md shadow"
+    src="/pituca.png"
+    alt="Screenshot de pitucadomax.vercel.app"
+  />
+</div>

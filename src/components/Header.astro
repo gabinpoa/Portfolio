@@ -1,10 +1,11 @@
 ---
 import { Icon } from "astro-icon";
+import ConditionalHeaderLinks from "./ConditionalHeaderLinks.svelte";
 ---
 
 <header class="flex justify-between items-center">
   <p class="font-vt323 text-7xl">G</p>
-  <nav class="flex gap-12 items-center">
+  <nav class="flex gap-6 items-center">
     <a
       aria-label="Linkedin"
       href="https://www.linkedin.com/in/gabriel-jardim-nascimento/"
@@ -23,8 +24,6 @@ import { Icon } from "astro-icon";
       target="_blank"
       rel="noopener noreferrer"><Icon class="w-9" name="line-md:email" /></a
     >
-    <a href="#projetos" class="text-xl">Projetos</a>
-    <a href="#stacks" class="text-xl">Habilidades</a>
-    <a href="#techs" class="text-xl">Tecnologias diferenciadas</a>
+    <ConditionalHeaderLinks client:load />
   </nav>
 </header>
