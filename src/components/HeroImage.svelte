@@ -1,15 +1,15 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { crossfade, fade, fly, slide } from "svelte/transition";
 
   const imagesPath: string[] = [
+    "/avatar-removebg-preview.png",
     "/spotifan.png",
     "/doctors-sc.jpg",
     "/recomecar.png",
     "/pituca.png",
   ];
-  let firstImage = true;
   let counter = 0;
-  $: imageSource = imagesPath[counter];
 
   function nextImage() {
     if (counter < imagesPath.length - 1) {
@@ -20,63 +20,31 @@
   }
 
   onMount(() => {
-    setTimeout(() => {
-      firstImage = false;
-      setInterval(() => {
-        nextImage();
-      }, 3000);
-    }, 1900);
+    setInterval(() => {
+      nextImage();
+    }, 3000);
   });
 </script>
 
-{#if firstImage}
-  <img
-    width={384}
-    height={384}
-    class="fadeOut"
-    src="/avatar-removebg-preview.png"
-    alt="avatar de Gabriel Nascimento"
-  />
-{:else}
-  <div
-    class="artboard opacity-0 h-[calc(100vh-150px)] md:h-[568px] w-fit animated"
-  >
+{#each imagesPath as path, i}
+  {#if i === counter && i !== 0}
+    <div
+      transition:slide={{ duration: 600 }}
+      class="artboard h-[calc(100vh-150px)] md:h-[568px] w-fit"
+    >
+      <img
+        class="h-full w-auto rounded-xl shadow"
+        src={path}
+        alt="spotifan web app"
+      />
+    </div>
+  {:else if counter === 0 && i === 0}
     <img
-      class="h-full w-auto rounded-xl shadow"
-      src={imageSource}
-      alt="spotifan web app"
+      transition:slide={{ axis: "x", duration: 600 }}
+      src={path}
+      height="384"
+      width="384"
+      alt=""
     />
-  </div>
-{/if}
-
-<style>
-  .fadeOut {
-    animation-name: fade-out;
-    animation-delay: 1s;
-    animation-duration: 1.2s;
-    animation-timing-function: ease-out;
-  }
-  .animated {
-    animation: fade-in-slide-left 3s ease-in infinite;
-  }
-  @keyframes fade-in-slide-left {
-    35% {
-      opacity: 100%;
-    }
-    80% {
-      transform: translate(0);
-      opacity: 100%;
-    }
-    100% {
-      transform: translate(440px);
-    }
-  }
-  @keyframes fade-out {
-    0% {
-      opacity: 100%;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-</style>
+  {/if}
+{/each}
